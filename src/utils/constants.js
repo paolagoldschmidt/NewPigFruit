@@ -4,6 +4,7 @@ export const GAME_WIDTH = 256;
 export const GAME_HEIGHT = 240;
 export const GAME_ZOOM = 4;
 export const WORLD_GRAVITY_Y = 700;
+export const FRUIT_GRAVITY_Y = 700;
 
 export const FRUIT_SPAWN_MIN_MS = 500;
 export const FRUIT_SPAWN_MAX_MS = 1100;
