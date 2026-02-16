@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Pig Remake</title>
+    <style>
+      /* Basic page styling and canvas container */
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #1f1f1f;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      #game-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      canvas {
+        image-rendering: pixelated;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Phaser injects the canvas here -->
+    <div id="game-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
