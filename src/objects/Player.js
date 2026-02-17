@@ -8,10 +8,13 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   setupBody() {
+    // Keep the exact on-screen size while using a higher-resolution source texture.
+    this.setDisplaySize(384, 256);
     this.setOrigin(0.5, 1);
 
-    this.body.setSize(this.width * 0.80, this.height * 0.85);
-    this.body.setOffset(this.width * 0.10, this.height * 0.10);
+    // Narrower collision body lets the player reach both world edges while preserving visual size.
+    this.body.setSize(this.width * 0.35, this.height * 0.85);
+    this.body.setOffset(this.width * 0.325, this.height * 0.10);
 
     this.setCollideWorldBounds(true);
     this.body.allowGravity = false;
@@ -24,12 +27,17 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   update(cursors) {
+    if (!cursors) {
+      this.stop();
+      return;
+    }
+
     if (cursors.left.isDown) {
       this.setVelocityX(-PLAYER_SPEED);
     } else if (cursors.right.isDown) {
       this.setVelocityX(PLAYER_SPEED);
     } else {
-      this.setVelocityX(0);
+      this.stop();
     }
   }
 }

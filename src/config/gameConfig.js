@@ -1,12 +1,13 @@
 // Phaser configuration for NES-like fixed screen.
 import Phaser from 'phaser';
 import {
-  GAME_WIDTH,
   GAME_HEIGHT,
+  GAME_WIDTH,
   GAME_ZOOM,
   WORLD_GRAVITY_Y
 } from '../utils/constants.js';
 import GameScene from '../scenes/GameScene.js';
+import EndScene from '../scenes/EndScene.js';
 
 const gameConfig = {
   type: Phaser.AUTO,
@@ -20,7 +21,7 @@ const gameConfig = {
   backgroundColor: '#6fa8dc',
   scale: {
     mode: Phaser.Scale.NONE,
-    autoCenter: Phaser.Scale.CENTER_BOTH
+    autoCenter: Phaser.Scale.NO_CENTER
   },
   physics: {
     default: 'arcade',
@@ -29,7 +30,7 @@ const gameConfig = {
       debug: false
     }
   },
-  scene: [GameScene]
+  scene: [GameScene, EndScene]
 };
 
 export default gameConfig;
